@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import contactUsbg from "../../../assets/contact/contactUsBg.jpg";
+import contactUsbg from "../../../assets/contact/contactUsbg.jpg";
 import Cover from "../../common/Cover";
 import SectionIntro from "../../common/SectionIntro";
 import ContactInfo from "./ContactInfo";
