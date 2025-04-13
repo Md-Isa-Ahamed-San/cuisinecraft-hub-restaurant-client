@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
@@ -13,6 +13,7 @@ import Loading from "../../shared/Loading/Loading";
 const OurShop = () => {
   const arr = ["salad", "pizza", "soup", "dessert"];
   const { categoryName } = useParams();
+  const [initialLoading, SetInitialLoading] = useState(false);
   console.log("category name: " + categoryName);
   const [tabIndex, setTabIndex] = useState(arr.indexOf(categoryName));
   const [data, isLoading] = useMenu(""); // Extract loading state from useMenu
@@ -20,12 +21,22 @@ const OurShop = () => {
   const salad = data && data.filter((item) => item.category === "salad");
   const pizza = data && data.filter((item) => item.category === "pizza");
   const soup = data && data.filter((item) => item.category === "soup");
+useEffect(()=>{
+  if (
+    dessert?.length === 0 &&
+    salad?.length === 0 &&
+    pizza?.length === 0 &&
+    soup?.length === 0
+  ) {
+    SetInitialLoading(true);
+  } else SetInitialLoading(false);
+},[dessert,salad,pizza,soup])
   const coverDetails = {
     image: banner2,
     heading: "SHOP",
     text: "WOULD YOU LIKE TO TRY A DISH?",
   };
-
+  console.log("yyyyyyyy: ", dessert, salad, pizza, soup);
   return (
     <div>
       <Helmet>
@@ -33,7 +44,7 @@ const OurShop = () => {
       </Helmet>
       <Cover coverDetails={coverDetails}></Cover>
 
-      {isLoading ? ( // Conditional rendering for the loading state
+      {isLoading || initialLoading ? ( // Conditional rendering for the loading state
         <div className="flex justify-center items-center py-20">
           <Loading />
         </div>

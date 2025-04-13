@@ -8,7 +8,7 @@ import ChefRecommendation from "./ChefRecommendation/ChefRecommendation";
 import FeaturedItemSection from "./FeaturedItemSection/FeaturedItemSection";
 import ReviewSection from "./ReviewSection/ReviewSection";
 import { Helmet } from "react-helmet-async";
-import restaurantbg from '../../../assets/others/restaurantbg.png'
+import restaurantbg from '../../../assets/others/restaurantbg.jpg'
 const Home = () => {
   const categoryIntroInfo = {
     backgroundColor: "bg-white",

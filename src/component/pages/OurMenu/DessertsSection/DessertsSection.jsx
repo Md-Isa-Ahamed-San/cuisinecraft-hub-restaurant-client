@@ -1,5 +1,5 @@
 import CategoryIntro from "../../../common/CategoryIntro";
-import dessertsSectionBg from "../../../../assets/others/desertsSectionBg.jpeg";
+import dessertsSectionBg from "../../../../assets/others/desertsSectionBg.jpg";
 import { LuDessert } from "react-icons/lu";
 import useMenu from "../../../Hooks/useMenu";
 import MenuItem from "../../../common/MenuItem";

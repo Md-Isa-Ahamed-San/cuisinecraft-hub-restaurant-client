@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const axiosPublic = axios.create({
     // baseURL:'http://localhost:5000/',
-    baseURL:'https://cuisinecraft-hub-restaurant-server.onrender.com',
+    baseURL:'https://cuisinecraft-hub-restaurant-server-jasi.onrender.com',
     withCredentials:true
 })
 const useAxiosPublic = () => {
