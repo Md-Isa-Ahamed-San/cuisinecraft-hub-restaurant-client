@@ -106,7 +106,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar ${"bg-[#CAF4FF]"}  h-16 md:h-[110px] px-10 transition-all duration-300 fixed z-10`}
+      className={`navbar ${"bg-[#CAF4FF]"}  h-16 md:h-[110px] px-10 transition-all duration-300 sticky top-0 z-10`}
     >
       <div className="navbar-start w-full ">
         <Toaster></Toaster>
