@@ -6,35 +6,28 @@ import img3 from '../../../../assets/home/03.avif';
 import img4 from '../../../../assets/home/04.jpg';
 import img5 from '../../../../assets/home/05.avif';
 import img6 from '../../../../assets/home/06.jpg';
+
 const Banner = () => {
     return (
-        <div className="">
-            <Carousel className="m-auto" autoPlay='true' interval='4000'>
-            <div>
-                <img className="" src={img1} />
-                {/* <p className="legend">Legend 1</p> */}
-            </div>
-            <div>
-                <img className="" src={img2} />
-                {/* <p className="legend">Legend 2</p> */}
-            </div>
-            <div>
-                <img className="" src={img3} />
-                {/* <p className="legend">Legend 3</p> */}
-            </div>
-            <div>
-                <img className="" src={img4} />
-                {/* <p className="legend">Legend 3</p> */}
-            </div>
-            <div>
-                <img className="" src={img5} />
-                {/* <p className="legend">Legend 3</p> */}
-            </div>
-            <div>
-                <img className="" src={img6} />
-                {/* <p className="legend">Legend 3</p> */}
-            </div>
-                </Carousel>
+        <div className="max-w-7xl mx-auto px-2">
+            <Carousel 
+                autoPlay 
+                interval={4000} 
+                infiniteLoop 
+                showThumbs={false} 
+                showStatus={false}
+                className="rounded-xl"
+            >
+                {[img1, img2, img3, img4, img5, img6].map((img, index) => (
+                    <div key={index}>
+                        <img 
+                            src={img} 
+                            alt={`Slide ${index + 1}`} 
+                            className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-xl shadow-lg"
+                        />
+                    </div>
+                ))}
+            </Carousel>
         </div>
     );
 };
